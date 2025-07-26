@@ -18,7 +18,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 p-4">
+    <div className="min-h-screen bg-black text-white p-4">
       <h1 className="text-3xl font-bold text-center mb-6">
         Real-Time Air Quality Tracker
       </h1>
