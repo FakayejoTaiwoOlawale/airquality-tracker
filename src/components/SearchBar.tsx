@@ -1,9 +1,10 @@
 import React from 'react'
+import { AQIData } from '../types/aqi'
 
-const SearchBar = () => {
+const SearchBar = (data:AQIData[]) => {
   return (
     <div>
-        <input type="search" name="searchbar" id="" className='w-4xl'/>
+        <input type="search" name="searchbar" id="" className='w-4xl' data={data}/>
     </div>
   )
 }
