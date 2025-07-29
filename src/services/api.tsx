@@ -1,7 +1,7 @@
 // src/services/api.ts
 import axios from "axios";
 import { type AQIData } from "../types/aqi";
-
+//signed up for open aqi data
 const BASE_URL = "https://api.openaq.org/v2/latest";
 
 export const fetchAQIDataByCity = async (city: string): Promise<AQIData[]> => {
