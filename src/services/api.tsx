@@ -3,14 +3,19 @@ import axios from "axios";
 import { type AQIData } from "../types/aqi";
 //signed up for open aqi data
 const BASE_URL = "https://api.openaq.org/v3/locations/2178";
-const apiKey=process.env.Rea
+const apiKey = process.env.REACT_APP_OPENAQ_API_KEY;
 
 //i just realised that the :promise... could be to define what we are returning
 export const fetchAQIDataByCity = async (city: string): Promise<AQIData[]> => {
-  try {
-    const response=await axios
+const response = await axios.get(BASE_URL, {
+      headers: {
+        "X-API-Key": apiKey || "",
+      },
+      params: {
+        city,
+        limit: 1,
+      },
     });
-
     const results = response.data.results;
 
     const formatted: AQIData[] = results.map((item: any) => ({
